@@ -230,6 +230,6 @@ fup.completeness = function(date.inclusion,
   print(paste("The person-time follow-up is", pys, "% according to the SPT method (Xue et al, BMC medical research methodology, 2017)") )
 
 
-  return(list("dat"= tfldata, fupc"= pys))
+  return(list("dat"= tfldata, "fupc"= pys))
 
 }
