@@ -1,11 +1,10 @@
 Package: fupcompletness
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Follow up completeness
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Kevin M. Veen, MD, PhD
+Maintainer: Kevin M Veen <k.veen@erasmusmc.nl>
+Description: This package aims to calculate the follow-up completeness of trails and observational medical data according to different methods described in literature. The methods implemented are: Percentage method, Clark C, Modified Clark C, Follow-up index, Person-Time Follow-up Rate (FPT) and simplified person-time method (SPT) 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
