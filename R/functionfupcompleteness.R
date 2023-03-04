@@ -222,10 +222,10 @@ fup.completeness = function(date.inclusion,
       ncurnls<-ncurnls-edeath[i]   }
 
     #simplified person time method
-    pys<-satotal/(nsubject*endfl)
+    pys<-round(satotal/(nsubject*endfl),2)*100
   }
 
-  pys = round(pys*100,2)
+  
   print(paste("The person-time follow-up is", pys, "% according to the SPT method (Xue et al, BMC medical research methodology, 2017)") )
 
 
