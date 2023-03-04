@@ -1,4 +1,4 @@
-# fupcompleteness
+# Follow-up completeness
 
 Collection of functions to evaluate follow-up completeness. The functions are dependend on the Icens package (1) and interval package (2) and these should be installed first by entering: 
 
