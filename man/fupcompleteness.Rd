@@ -1,5 +1,5 @@
 \name{fup.completeness}
-\alias{fup.completeness}
+\alias{fupcompleteness}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
