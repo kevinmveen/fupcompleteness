@@ -67,10 +67,11 @@ fup.completeness = function(date.inclusion,
 
 
     mclarkc = round(sum(dat$obs.fup)/sum(dat$corrected.theory.fup)*100,2)
-
+    print(paste("The completness of follow-up is", mclarkc, "% according to the modified Clark C method") )
+    
     return(list(mclarkc, dat))
 
-    print(paste("The completness of follow-up is", mclarkc, "% according to the modified Clark C method") )
+    
 
   }
 
