@@ -1,12 +1,18 @@
-\name{hello}
+\name{fupcompleteness}
 \alias{hello}
-\title{Hello, World!}
+\title{Follow-up completness}
 \usage{
 hello()
 }
 \description{
-Prints 'Hello, world!'.
+Prints 'Returns a list with follow-up completeness and data frame to calculate it'.
 }
+\Arguments{test}
 \examples{
-hello()
+dat.output2 = fupcompletness::fup.completeness(date.inclusion = input_data$date.inclusion,
+                                 last.fup.date = input_data$last.fup.date,
+                                 end.date = input_data$end.date,
+                                 status = input_data$status,
+                                 cencode = 0, 
+                                 method = "mclarkc")
 }
