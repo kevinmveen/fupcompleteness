@@ -22,7 +22,7 @@ fup.completeness = function(date.inclusion,
     clarkc = round(sum(dat$obs.fup)/sum(dat$theoretical.fup)*100,2)
 
     print(paste("The completness of follow-up is", clarkc, "% according to the method of Clark C") )
-    output = list(clarkc, dat)
+    output = list(dat, "fupc"= clarkc)
     return(output)
 
   }
@@ -69,7 +69,7 @@ fup.completeness = function(date.inclusion,
     mclarkc = round(sum(dat$obs.fup)/sum(dat$corrected.theory.fup)*100,2)
     print(paste("The completness of follow-up is", mclarkc, "% according to the modified Clark C method") )
     
-    return(list(mclarkc, dat))
+    return(list(dat, "fupc" = mclarkc ))
 
     
 
@@ -88,7 +88,7 @@ fup.completeness = function(date.inclusion,
     fui = round(mean(dat$FUI)*100,2)
 
     print(paste("The mean of follow-up index is", fui, "% according to the FUI method") )
-    return(list(fui, dat))
+    return(list(dat, "fupc" =fui))
 
   }
 
@@ -156,7 +156,7 @@ fup.completeness = function(date.inclusion,
 
     print(paste("The person-time follow-up is", py, "% according to the FPT method (Xue et al, BMC medical research methodology, 2017)") )
 
-    return(list(py, tfldata))
+    return(list("dat" = tfldata,"fupc" = py))
 
 
 
@@ -230,6 +230,6 @@ fup.completeness = function(date.inclusion,
   print(paste("The person-time follow-up is", pys, "% according to the SPT method (Xue et al, BMC medical research methodology, 2017)") )
 
 
-  return(list(pys, tfldata))
+  return(list("dat"= tfldata, fupc"= pys))
 
 }
