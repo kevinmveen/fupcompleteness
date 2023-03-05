@@ -83,8 +83,6 @@ fup.completeness = function(date.inclusion,
     dat$FUI[dat$status != cencode] = 1
     dat$FUI = replace(dat$FUI, dat$FUI > 1, 1)
 
-    ggdensity(dat$FUI)
-
     fui = round(mean(dat$FUI)*100,2)
 
     print(paste("The mean of follow-up index is", fui, "% according to the FUI method") )
