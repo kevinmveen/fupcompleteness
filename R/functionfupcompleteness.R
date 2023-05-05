@@ -31,7 +31,7 @@ fup.completeness = function(date.inclusion,
 
     dat$obs.fup = as.numeric(dat$last.fup.date - dat$date.inclusion)
     dat$maxfup = as.numeric(dat$end.date - dat$date.inclusion)
-    dat$completed.fup = ifelse(dat$status ==cencode & dat$obs.fup < dat$maxfup, 0,1)
+    dat$completed.fup = ifelse(dat$status ==cencode & dat$obs.fup < dat$maxfup-1, 0,1)
 
     complete = round(sum(dat$completed.fup )/nrow(dat)*100,2)
 
