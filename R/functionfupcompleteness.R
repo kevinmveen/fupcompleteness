@@ -63,15 +63,16 @@ fup.completeness = function(date.inclusion,
     dat$missed.fup[dat$death == deathcode] = 0
     dat$theoretical.fup = dat$obs.fup + dat$missed.fup
     dat$corrected.miss = dat$missed.fup - (r/2)*(dat$missed.fup)^2
+    dat$corrected.miss = (1-exp(-r*dat$missed.fup))/r
     dat$corrected.theory.fup = dat$obs.fup + dat$corrected.miss
 
 
     mclarkc = round(sum(dat$obs.fup)/sum(dat$corrected.theory.fup)*100,2)
     print(paste("The completness of follow-up is", mclarkc, "% according to the modified Clark C method") )
-    
+
     return(list("fupc" = mclarkc, "dat"= dat ))
 
-    
+
 
   }
 
@@ -221,7 +222,7 @@ fup.completeness = function(date.inclusion,
       ncurnls<-ncurnls-edeath[i]   }
 
     #simplified person time method
-    
+
   }
 
   pys<-round(satotal/(nsubject*endfl),2)*100
@@ -231,3 +232,4 @@ fup.completeness = function(date.inclusion,
   return(list("dat"= tfldata, "fupc"= pys))
 
 }
+
