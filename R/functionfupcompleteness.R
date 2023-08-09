@@ -91,7 +91,7 @@ fup.completeness = function(date.inclusion,
 
   }
 
-  if(method == "PTFR"){
+  if(method == "FPT"){
 
     nsubject = nrow(dat)
     int.left = rep(0, nrow(dat))
@@ -227,9 +227,8 @@ fup.completeness = function(date.inclusion,
 
   pys<-round(satotal/(nsubject*endfl),2)*100
   print(paste("The person-time follow-up is", pys, "% according to the SPT method (Xue et al, BMC medical research methodology, 2017)") )
-#test
+
 
   return(list("dat"= tfldata, "fupc"= pys))
 
 }
-
