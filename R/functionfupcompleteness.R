@@ -58,6 +58,9 @@ fup.completeness = function(date.inclusion,
     if(dim(x)==1){stop("There are no deaths; hence caculation of death rate is not possible")}
     r = sum(table(dat$death)[!rownames(x) == deathcode]) / sum(dat$death.fup)
 
+    if(r > 0.05){print(paste0("Daily death rate is ", round(r, digits = 4)))
+            warning("Are you sure daily death rate is correct?")}
+
     dat$obs.fup = as.numeric(dat$last.fup.date - dat$date.inclusion)
     dat$missed.fup =  as.numeric(dat$end.date - dat$last.fup.date)
     dat$missed.fup = replace(dat$missed.fup, dat$missed.fup<0,0)
