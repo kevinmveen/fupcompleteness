@@ -64,7 +64,7 @@ fup.completeness = function(date.inclusion,
 
     if(r > 0.05){warning("Death rate is very high you sure death rate is correct?")}
 
-    } esle{r = r.pre}
+    } else{r = r.pre}
 
     dat$obs.fup = as.numeric(dat$last.fup.date - dat$date.inclusion)
     dat$missed.fup =  as.numeric(dat$end.date - dat$last.fup.date)
