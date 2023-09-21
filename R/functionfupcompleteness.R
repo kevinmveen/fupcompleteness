@@ -6,7 +6,8 @@ fup.completeness = function(date.inclusion,
                             death.date = NULL,
                             death = NULL,
                             deathcode = 1,
-                            method = "clarkc"){
+                            method = "clarkc",
+                           r.pre = NULL){
 
   dat = cbind.data.frame("date.inclusion" = date.inclusion,
                          "end.date" = end.date,
@@ -55,12 +56,15 @@ fup.completeness = function(date.inclusion,
     dat$death.fup = as.numeric(dat$death.date - dat$date.inclusion)
 
     x = table(dat$death)
-    if(dim(x)==1){stop("There are no deaths; hence caculation of death rate is not possible")}
+    if(!is.null(r.pre)){
+    if(dim(x)==1){stop("There are no deaths; hence caculation of death rate is not possible. Please pre-specify a daily death rate (r)")}
     r = sum(table(dat$death)[!rownames(x) == deathcode]) / sum(dat$death.fup)
 
     print(paste0("Daily rate is ", r))
 
     if(r > 0.05){warning("Death rate is very high you sure death rate is correct?")}
+
+    } esle{r = r.pre}
 
     dat$obs.fup = as.numeric(dat$last.fup.date - dat$date.inclusion)
     dat$missed.fup =  as.numeric(dat$end.date - dat$last.fup.date)
