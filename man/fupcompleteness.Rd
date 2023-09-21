@@ -10,7 +10,9 @@ Function to calculate follow-up completeness in (medical) cohort studies
 Function to caculate follow-up complentess according to the Clark C (1), Modified Clark C (2), percentage method (3), follow-up index (4), Formal Person-Time Method (FPT) (3) and Simplified Person-Time method (SPT) (3)
 }
 \usage{
-fup.completeness(date.inclusion, end.date, last.fup.date, status, cencode =0, death.date = NULL,            death = NULL, deathcode = 1, method = "clarkc")
+fup.completeness(date.inclusion, end.date, last.fup.date, status,
+cencode =0, death.date = NULL, death = NULL, deathcode = 1,
+method = "clarkc", r.pre = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +24,7 @@ fup.completeness(date.inclusion, end.date, last.fup.date, status, cencode =0, de
   \item{death.date}{Vector of death dates of the subjects. If not entered status is assumed to be death. Default =NULL}
   \item{deathcode}{Code for death in status vector. Default = 1}
   \item{method}{Method used to caculate follow-up completness. This can be "clarkc" (Clark C), "mclarkc" (modified Clark C), "percent" (percentage method), "FUI" (follow-up index), "FPT", (Formal Person-Time Method ), "SPT" (Simplified person-time method)}
+  \item{r.pre}{A prespecifed linarized death rate used in the modified Clark C method. If NULL the death rate is cacluated using the inputted data.}
 %%     ~~Describe \code{x} here~~
 }
 
