@@ -116,3 +116,4 @@ dat.output2 = fupcompletness::fup.completeness(date.inclusion = input_data$date.
 % \concept{ ~cpt1 }
 % \concept{ ~cpt2 }
 % Use only one concept per line.
+
